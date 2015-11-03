@@ -41,7 +41,7 @@ class Restrict_Taxonomies{
             // Adding an exception to post.php page, where we must filter taxonomy terms too
             global $pagenow;
 
-            if( $post_type != false or $pagenow == 'post.php' ){ // Adding an exception to post.php
+            if( $post_type != false or $pagenow == 'post.php' or $pagenow == 'post-new.php' ){ // Adding an exception to post.php
                 add_action( 'admin_init', array( &$this, 'posts' ) );
             }
 
